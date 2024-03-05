@@ -4,17 +4,17 @@ from flask.json import jsonify
 import os
 import json
 
-fileObject = open("creds.json", "r")
+fileObject = open("cred.json", "r")
 jsoncontent = fileObject.read()
-creds = json.loads(jsoncontent)
+cred = json.loads(jsoncontent)
 
 app = Flask(__name__)
 
 
 # This information is obtained upon registration of a new GitHub OAuth
 # application here: https://github.com/settings/applications/new
-client_id = creds['client_id']
-client_secret = creds['client_secret']
+client_id = cred['client_id']
+client_secret = cred['client_secret']
 authorization_base_url = 'https://github.com/login/oauth/authorize'
 token_url = 'https://github.com/login/oauth/access_token'
 
