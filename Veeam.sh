@@ -14,8 +14,8 @@ fi
 
 # Configure the backup job (This part may need to be customized based on specific backup requirements)
 JOB_NAME="XubuntuVMBackup"
-REPOSITORY_PATH="/mnt/backup_repository"  # Define your backup repository path
-BACKUP_LEVEL="Incremental"  # Backup type: Incremental, Full
+REPOSITORY_PATH="/home/maxwell/Desktop/Backups"  # Define your backup repository path
+BACKUP_LEVEL="Full"  # Backup type: Incremental, Full
 
 # Check if a job with the specified name already exists
 if ! veeamconfig job list | grep -q "$JOB_NAME"
