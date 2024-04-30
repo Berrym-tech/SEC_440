@@ -10,9 +10,11 @@ SOURCE="/home/maxwell/Desktop/Happy Files"
 export BORG_PASSPHRASE='Backup'
 
 # Initialize the repository if it does not exist
-if [ ! -d "$REPO" ]; then
+if ! borg list $REPO &> /dev/null; then
     echo "Initializing Borg repository..."
     borg init --encryption=repokey-blake2 $REPO
+else
+    echo "Repository already initialized."
 fi
 
 # Create a new backup
