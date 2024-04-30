@@ -21,7 +21,7 @@ encrypted_directory_path = "/home/maxwell/Desktop/Happy Files"
 
 # Load the encryption key
 key = load_key()
-print("Encryption Key:", key)
+print("Encryption Key:", key)  # Debugging statement
 
 # Decrypt files with the .encrypted extension
 for root, dirs, files in os.walk(encrypted_directory_path):
