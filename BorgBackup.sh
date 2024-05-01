@@ -2,8 +2,8 @@
 
 # Configuration
 REPO="/home/maxwell/Desktop/Backups"
-SOURCE="/home/maxwell/"
-export BORG_PASSPHRASE='your_secure_passphrase'
+SOURCE="/home/maxwell/Desktop"
+export BORG_PASSPHRASE='Buddy'
 
 # Initialize the repository if not already done
 if ! borg list $REPO &> /dev/null; then
