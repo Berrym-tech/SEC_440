@@ -1,15 +1,11 @@
 #!/bin/bash
 
-# Set the location of the Borg repository
+# Configuration
 REPO="/home/maxwell/Desktop/Backups"
-
-# Set the backup source directory
 SOURCE="/home/maxwell/Desktop/Happy Files"
+export BORG_PASSPHRASE='your_secure_passphrase'
 
-# Export Borg passphrase in environment variable (replace 'your_borg_passphrase' with your actual passphrase)
-export BORG_PASSPHRASE='Backup'
-
-# Initialize the repository if it does not exist
+# Initialize the repository if not already done
 if ! borg list $REPO &> /dev/null; then
     echo "Initializing Borg repository..."
     borg init --encryption=repokey-blake2 $REPO
@@ -17,9 +13,9 @@ else
     echo "Repository already initialized."
 fi
 
-# Create a new backup
+# Create a backup
 echo "Starting backup..."
-borg create --verbose --filter AME --list --stats --show-rc --compression lz4 --exclude-caches \
+borg create --verbose --filter AME --list --stats --compression lz4 --exclude-caches \
             $REPO::'{hostname}-{now:%Y-%m-%d_%H:%M:%S}' $SOURCE
 
 # Pruning settings - keeping last 7 daily, 4 weekly, and 6 monthly archives
