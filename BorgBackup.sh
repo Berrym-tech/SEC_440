@@ -2,7 +2,7 @@
 
 # Configuration
 REPO="/home/maxwell/Desktop/Backups"
-SOURCE="/home/maxwell/Desktop/Happy Files"
+SOURCE="/home/maxwell/"
 export BORG_PASSPHRASE='your_secure_passphrase'
 
 # Initialize the repository if not already done
